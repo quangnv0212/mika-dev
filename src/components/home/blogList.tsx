@@ -1,4 +1,5 @@
 import { blogs } from "@/blogs";
+import Link from "next/link";
 import SwiperCore from "swiper/core";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -38,16 +39,20 @@ export function BlogList(props: IBlogListProps) {
                   </a>
                 </li>
                 <li className="relative z-[1] before:rounded-full before:bg-orange before:block before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[15px] before:-z-[1] before:w-[6px] before:h-[6px] pl-[30px]">
-                  <a className="text-orange" href={`blog/${item.slug}`}>
-                    {item.date}
-                  </a>
+                  <span className="text-orange">{item.date}</span>
                 </li>
               </ul>
               <div className="flex justify-between items-end text-black-800 hover:text-orange group">
                 <h4 className="font-bold  transition-all leading-8 text-[18px] md:text-[20px] 2xl:text-[22px]">
-                  <a href={`blog/${item.slug}`}>{item.name}</a>
+                  <Link
+                    href={{
+                      pathname: `/blog/${item.slug}`,
+                    }}
+                  >
+                    {item.name}
+                  </Link>
                 </h4>
-                <a href={`blog/${item.slug}`}>
+                <div>
                   <svg
                     className="group-hover:animate-arrow-move-up"
                     width={40}
@@ -71,7 +76,7 @@ export function BlogList(props: IBlogListProps) {
                       fillOpacity="0.9"
                     />
                   </svg>
-                </a>
+                </div>
               </div>
             </div>
           </div>

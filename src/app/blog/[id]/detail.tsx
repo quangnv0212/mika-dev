@@ -24,7 +24,7 @@ export default function Detail({ data }: IDetailProps) {
               title: <a href="/">Home</a>,
             },
             {
-              title: <a href="/blogs">Blogs</a>,
+              title: <a href="/blog">Blogs</a>,
             },
             {
               title: data.name,

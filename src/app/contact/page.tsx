@@ -1,6 +1,37 @@
+"use client";
 import { SocialNetWork } from "@/components/social-network";
-
+import { useState } from "react";
+import axios from "axios";
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    phone: "",
+    address: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const TELEGRAM_BOT_TOKEN = "7226783173:AAG40zJcmsqvAR1mCHk3T0riAjzLf8j92n0";
+  const CHAT_ID = "5454365694";
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const res = await axios.post(
+      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+      {
+        chat_id: CHAT_ID,
+        text: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}\nMessage: ${formData.message}`,
+      }
+    );
+  };
   return (
     <section className="bg-secondary pt-40 pb-[120px]">
       <div className="container mx-auto ">
@@ -122,9 +153,7 @@ export default function Contact() {
             data-aos-delay={300}
           >
             <form
-              id="contact-form"
-              action="mail.php"
-              method="post"
+              onSubmit={handleSubmit}
               className="grid grid-cols-12 gap-[18px]"
             >
               <div className="col-span-12 md:col-span-6">
@@ -135,12 +164,12 @@ export default function Contact() {
                   Name
                 </label>
                 <input
-                  id="name"
-                  className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                   type="text"
-                  required
-                  placeholder="Your name*"
                   name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                 />
               </div>
               <div className="col-span-12 md:col-span-6">
@@ -151,12 +180,12 @@ export default function Contact() {
                   Email
                 </label>
                 <input
-                  id="Email"
-                  className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                   type="email"
-                  required
-                  placeholder="Your email*"
                   name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                 />
               </div>
               <div className="col-span-12 md:col-span-6">
@@ -167,34 +196,38 @@ export default function Contact() {
                   Phone
                 </label>
                 <input
-                  id="Phone"
+                  id="phone"
                   className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                   type="text"
                   required
                   placeholder="Your number"
                   name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-span-12 md:col-span-6">
                 <label
                   className="text-sm font-normal font-Inter leading-tight mb-3 block"
-                  htmlFor="Subject"
+                  htmlFor="address"
                 >
                   Address
                 </label>
                 <input
-                  id="Subject"
+                  id="address"
                   className="font-normal w-full leading-7 placeholder:opacity-100 placeholder:text-black-text-600 border border-black-800 border-opacity-40 rounded-[8px] p-4 focus:border-black-800 focus:border-opacity-40 focus:outline-none "
                   type="text"
                   required
                   placeholder="Your address"
-                  name="subject"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-span-12">
                 <label
                   className="text-sm font-normal font-Inter leading-tight mb-3 block"
-                  htmlFor="Message"
+                  htmlFor="message"
                 >
                   Message
                 </label>
@@ -206,7 +239,8 @@ export default function Contact() {
                   rows={10}
                   required
                   placeholder="Type your message"
-                  defaultValue={""}
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
               <div className="col-span-12">

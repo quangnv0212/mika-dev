@@ -8,28 +8,7 @@ import Prism from "prismjs";
 import "prismjs/themes/prism.css"; // Hoặc thay đổi theme theo ý thích
 import { useEffect } from "react";
 import { Blog } from "@/components/home/blog";
-const markdown = `
-  # Welcome to My Portfolio
 
-  This is a demo of **ReactMarkdown**.
-
-  ## Features
-
-  - Easy to use
-  - Supports all standard Markdown syntax
-  - Customizable
-
-  ## Code Example
-
-  \`\`\`javascript
-  function greet() {
-    console.log("Hello, world!");
-  }
-  \`\`\`
-
-  ![Sample Image](https://via.placeholder.com/150)
-
-  `;
 export default function Detail({ data }: IDetailProps) {
   useEffect(() => {
     Prism.highlightAll(); // Highlight code sau khi component mount
@@ -151,45 +130,8 @@ export default function Detail({ data }: IDetailProps) {
             </div>
           </div>
           {data?.content}
-
-          <ReactMarkdown
-            components={{
-              p: ({ ...props }) => {
-                return (
-                  <div {...props} className="text-black-800 text-lg my-1" />
-                );
-              },
-              span: ({ ...props }) => {
-                return (
-                  <span {...props} className="text-black-800 text-lg my-1" />
-                );
-              },
-              li: ({ ...props }) => {
-                return (
-                  <li {...props} className="text-black-800 text-lg my-1" />
-                );
-              },
-              img: ({ ...props }) => {
-                return (
-                  <div className="flex justify-center">
-                    <img {...props} className="rounded-[20px] my-10" />
-                  </div>
-                );
-              },
-              code: ({ ...props }) => {
-                return (
-                  <pre className="language-js my-1">
-                    <code {...props} className="language-javascript" />
-                  </pre>
-                );
-              },
-            }}
-          >
-            {data?.content}
-          </ReactMarkdown>
         </div>
       </section>
-      {/* Blog Section Start */}
       <Blog />
     </div>
   );

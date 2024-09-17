@@ -24,7 +24,7 @@ export function HeroSectionStart(props: IHeroSectionStartProps) {
     incrementCounter();
   }, []);
   return (
-    <section className="bg-secondary relative pt-[140px] pb-[125px]">
+    <section className="bg-secondary relative pt-[140px] md:pb-[125px]">
       <div className="container">
         <div className="grid grid-cols-1 2xl:-mx-4">
           <div className="xl:pt-12">
@@ -177,6 +177,11 @@ export function HeroSectionStart(props: IHeroSectionStartProps) {
           </div>
         </div>
       </div>
+      <img
+        className="block md:hidden"
+        src="/assets/images/hero/hero-mobile.png"
+        alt=""
+      />
       <div className="desktop">
         <Image
           className="absolute top-24 right-10 w-[900px]"

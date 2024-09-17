@@ -29,7 +29,7 @@ export default function ProjectDetail(props: IProjectDetailProps) {
           data-aos="flip-down"
           data-aos-delay={300}
         >
-          <div className="flex gap-2 justify-between pb-12 ">
+          <div className="flex flex-col md:flex-row gap-2 justify-between pb-12 ">
             <div className="mb-10">
               <ul className="flex flex-wrap text-sm font-normal font-Inter leading-tight">
                 <li className="relative z-[1] before:rounded-full before:bg-black-800 before:block before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[8px] before:-z-[1] before:w-[6px] before:h-[6px] pl-[20px]">
@@ -63,7 +63,7 @@ export default function ProjectDetail(props: IProjectDetailProps) {
                 <span className="text-black-text-800 text-sm font-normal font-Inter leading-tight">
                   Tools
                 </span>
-                <div className="text-black-800 flex  leading-none">
+                <div className="text-black-800 gap-2 md:gap-0 flex flex-wrap leading-none">
                   {data.tools.map((tool, index) => (
                     <Tag color="geekblue" key={index}>
                       {tool}

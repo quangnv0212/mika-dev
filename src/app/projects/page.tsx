@@ -22,7 +22,7 @@ export default function Project() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {projects?.map((project, index) => (
             <div
               key={index}

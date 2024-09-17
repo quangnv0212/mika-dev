@@ -8,7 +8,28 @@ import Prism from "prismjs";
 import "prismjs/themes/prism.css"; // Hoặc thay đổi theme theo ý thích
 import { useEffect } from "react";
 import { Blog } from "@/components/home/blog";
+const markdown = `
+  # Welcome to My Portfolio
 
+  This is a demo of **ReactMarkdown**.
+
+  ## Features
+
+  - Easy to use
+  - Supports all standard Markdown syntax
+  - Customizable
+
+  ## Code Example
+
+  \`\`\`javascript
+  function greet() {
+    console.log("Hello, world!");
+  }
+  \`\`\`
+
+  ![Sample Image](https://via.placeholder.com/150)
+
+  `;
 export default function Detail({ data }: IDetailProps) {
   useEffect(() => {
     Prism.highlightAll(); // Highlight code sau khi component mount
@@ -115,6 +136,21 @@ export default function Detail({ data }: IDetailProps) {
                 </Tag>
               </li>
             </ul>
+          </div>
+          <div className="container mx-auto">
+            <div className="grid grid-cols-12 gap-6">
+              <div className="col-span-12" data-aos="fade-up">
+                <div className="font-bold text-center leading-none flex flex-wrap flex-col gap-y-2 mb-10">
+                  <span className="text-orange text-xl">Markdown Demo</span>
+                  <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px]">
+                    ReactMarkdown Example
+                  </h3>
+                </div>
+                <div className="prose max-w-none">
+                  <ReactMarkdown>{markdown}</ReactMarkdown>
+                </div>
+              </div>
+            </div>
           </div>
           <ReactMarkdown
             components={{

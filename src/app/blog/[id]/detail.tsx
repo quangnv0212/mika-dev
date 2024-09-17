@@ -2,16 +2,24 @@
 export interface IDetailProps {
   data: any;
 }
-import { Breadcrumb, Tag } from "antd";
+import { Blog } from "@/components/home/blog";
 import ReactMarkdown from "react-markdown";
+import { Breadcrumb, Tag } from "antd";
 import Prism from "prismjs";
 import "prismjs/themes/prism.css"; // Hoặc thay đổi theme theo ý thích
-import { useEffect } from "react";
-import { Blog } from "@/components/home/blog";
+import { useEffect, useState } from "react";
 
 export default function Detail({ data }: IDetailProps) {
   useEffect(() => {
     Prism.highlightAll(); // Highlight code sau khi component mount
+  }, []);
+  const [content, setContent] = useState("");
+  useEffect(() => {
+    fetch(`/assets/blog/${data.content}`)
+      .then((res) => res.text())
+      .then((text) => {
+        setContent(text);
+      });
   }, []);
 
   return (
@@ -116,22 +124,44 @@ export default function Detail({ data }: IDetailProps) {
               </li>
             </ul>
           </div>
-          <div className="container mx-auto">
-            <div className="grid grid-cols-12 gap-6">
-              <div className="col-span-12" data-aos="fade-up">
-                <div className="font-bold text-center leading-none flex flex-wrap flex-col gap-y-2 mb-10">
-                  <span className="text-orange text-xl">Markdown Demo</span>
-                  <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px]">
-                    ReactMarkdown Example
-                  </h3>
-                </div>
-                <div className="prose max-w-none"></div>
-              </div>
-            </div>
-          </div>
-          {data?.content}
+          <ReactMarkdown
+            components={{
+              p: ({ ...props }) => {
+                return (
+                  <div {...props} className="text-black-800 text-lg my-1" />
+                );
+              },
+              span: ({ ...props }) => {
+                return (
+                  <span {...props} className="text-black-800 text-lg my-1" />
+                );
+              },
+              li: ({ ...props }) => {
+                return (
+                  <li {...props} className="text-black-800 text-lg my-1" />
+                );
+              },
+              img: ({ ...props }) => {
+                return (
+                  <div className="flex justify-center">
+                    <img {...props} className="rounded-[20px] my-10" />
+                  </div>
+                );
+              },
+              code: ({ ...props }) => {
+                return (
+                  <pre className="language-js my-1">
+                    <code {...props} className="language-javascript" />
+                  </pre>
+                );
+              },
+            }}
+          >
+            {content}
+          </ReactMarkdown>
         </div>
       </section>
+      {/* Blog Section Start */}
       <Blog />
     </div>
   );

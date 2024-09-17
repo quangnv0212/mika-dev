@@ -6,6 +6,7 @@ export const blogs = [
     tools: ["Webpack", "NodeJS", "JavaScript"],
     thumbnail: "/assets/blog/what-is-webpack/thumb.webp",
     date: "2021-09-01",
+    content: "what-is-webpack.md",
   },
   {
     name: "Naming Conventions in Next JS: Boosting SEO and Code Maintainability",

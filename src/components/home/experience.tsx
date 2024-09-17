@@ -10,8 +10,12 @@ export function Experience(props: IIntroProps) {
       <div className="">
         <div className="">
           <img
+            src="/assets/images/about/about-mobile.png"
+            className=" md:hidden"
+          />
+          <img
             src="/assets/images/about/about.png"
-            className="md:w-[700px] top-0"
+            className="md:w-[700px] w-[1000px] top-0 desktop"
           />
           <div className="font-bold leading-none flex flex-wrap flex-col gap-y-2 md:absolute top-0 md:right-0 md:w-1/2 p-4 md:p-0">
             <span className="text-orange text-xl">Hello I’m</span>

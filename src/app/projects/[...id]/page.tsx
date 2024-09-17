@@ -59,19 +59,19 @@ export default function ProjectDetail(props: IProjectDetailProps) {
                   {data.category}
                 </h4>
               </li>
-              <li className="flex flex-col gap-2">
-                <span className="text-black-text-800 text-sm font-normal font-Inter leading-tight">
-                  Tools
-                </span>
-                <div className="text-black-800 gap-2 md:gap-0 flex flex-wrap leading-none">
-                  {data.tools.map((tool, index) => (
-                    <Tag color="geekblue" key={index}>
-                      {tool}
-                    </Tag>
-                  ))}
-                </div>
-              </li>
             </ul>
+            <li className="flex md:flex-col gap-2">
+              <span className="text-black-text-800 text-sm font-normal font-Inter leading-tight">
+                Tools
+              </span>
+              <div className="text-black-800 gap-2 md:gap-0 flex flex-wrap leading-none">
+                {data.tools.map((tool, index) => (
+                  <Tag color="geekblue" key={index}>
+                    {tool}
+                  </Tag>
+                ))}
+              </div>
+            </li>
           </div>
           <div className="grid grid-cols-1 mb-12">
             <img

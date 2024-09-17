@@ -177,11 +177,14 @@ export function HeroSectionStart(props: IHeroSectionStartProps) {
           </div>
         </div>
       </div>
-      <img
-        className="block md:hidden"
-        src="/assets/images/hero/hero-mobile.png"
-        alt=""
-      />
+      <div data-aos="fade-right" className="">
+        <img
+          className="block md:hidden"
+          src="/assets/images/hero/hero-mobile.png"
+          alt=""
+        />
+      </div>
+
       <div className="desktop">
         <Image
           className="absolute top-24 right-10 w-[900px]"

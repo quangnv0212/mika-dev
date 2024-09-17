@@ -146,12 +146,12 @@ export default function Detail({ data }: IDetailProps) {
                     ReactMarkdown Example
                   </h3>
                 </div>
-                <div className="prose max-w-none">
-                  <ReactMarkdown>{markdown}</ReactMarkdown>
-                </div>
+                <div className="prose max-w-none"></div>
               </div>
             </div>
           </div>
+          {data?.content}
+
           <ReactMarkdown
             components={{
               p: ({ ...props }) => {

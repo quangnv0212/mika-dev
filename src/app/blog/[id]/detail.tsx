@@ -15,7 +15,7 @@ export default function Detail({ data }: IDetailProps) {
   }, []);
   const [content, setContent] = useState("");
   useEffect(() => {
-    fetch(`/assets/blog/${data.content}`)
+    fetch(`/assets/blog/${data.slug}/${data.slug}.md`)
       .then((res) => res.text())
       .then((text) => {
         setContent(text);

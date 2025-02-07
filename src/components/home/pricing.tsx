@@ -4,21 +4,21 @@ export function Pricing(props: IPricingProps) {
   const data = [
     {
       title: "Basic",
-      price: "$9/h",
+      price: "$8/h",
       hours: "20 hrs",
       perWeek: "10 hours per week",
     },
     {
       title: "Premium",
-      price: "$12/h",
+      price: "$9/h",
       hours: "30 hrs",
-      perWeek: "15 hours per week",
+      perWeek: "30 hours per week",
     },
     {
       title: "Platinum",
-      price: "$15/h",
-      hours: "20 hrs",
-      perWeek: "20 hours per week",
+      price: "$10/h",
+      hours: "35 hrs",
+      perWeek: "35 hours per week",
     },
   ];
   return (
@@ -29,8 +29,7 @@ export function Pricing(props: IPricingProps) {
             <div className="flex flex-col md:flex-row justify-between md:items-end mb-16">
               <div
                 className="font-bold  leading-none flex flex-wrap flex-col gap-y-2 max-w-[325px] lg:max-w-[400px] xl:max-w-[527px]"
-                data-aos="fade-up"
-              >
+                data-aos="fade-up">
                 <span className="text-orange text-xl">Pricing</span>
                 <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px]">
                   Stay chill and pick your plan
@@ -39,12 +38,10 @@ export function Pricing(props: IPricingProps) {
               <div
                 className="flex mt-8 md:mt-0"
                 data-aos="fade-up"
-                data-aos-delay={200}
-              >
+                data-aos-delay={200}>
                 <a
                   href="contact"
-                  className="flex items-center flex-wrap btn-primary group"
-                >
+                  className="flex items-center flex-wrap btn-primary group">
                   Contact for Custom Project
                   <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
                     <svg
@@ -52,8 +49,7 @@ export function Pricing(props: IPricingProps) {
                       height={24}
                       viewBox="0 0 24 24"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
+                      xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M7 17L17 7"
                         stroke="currentColor"
@@ -84,8 +80,7 @@ export function Pricing(props: IPricingProps) {
               key={index}
               className="p-6 lg:p-8 bg-black-500 rounded-2xl transition-all hover:shadow-2xl hover:bg-white group flex flex-wrap flex-col gap-10 lg:gap-12 group"
               data-aos="fade-up"
-              data-aos-delay={index * 200}
-            >
+              data-aos-delay={index * 200}>
               <div className="flex items-center justify-between">
                 <span className="text-lg font-normal font-sans leading-none text-black-text-600">
                   {item.title}
@@ -105,15 +100,13 @@ export function Pricing(props: IPricingProps) {
                 </div>
                 <a
                   href="#"
-                  className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up"
-                >
+                  className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
                   <svg
                     width={24}
                     height={24}
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                       className="transition-all"
                       d="M7 17L17 7"

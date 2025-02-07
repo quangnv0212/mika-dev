@@ -185,9 +185,11 @@ export function HeroSectionStart(props: IHeroSectionStartProps) {
         />
       </div>
 
-      <div className="desktop">
+      <div className="">
         <Image
-          className="absolute top-24 right-10 w-[900px]"
+          className="absolute top-24 right-10 w-[900px] hidden md:hidden lg:block
+            md:w-[600px] lg:w-[700px] xl:w-[800px] 2xl:w-[900px]
+            md:right-0 lg:right-10"
           data-aos="fade-left"
           src="/assets/images/hero/hero.png"
           alt="hero Image"
@@ -196,7 +198,10 @@ export function HeroSectionStart(props: IHeroSectionStartProps) {
         />
         <a href="contact">
           <svg
-            className="absolute bottom-[200px] lg:bottom-[80px] xl:bottom-[80px] right-[40px] lg:right-[150px] xl:right-[150px]"
+            className="absolute bottom-[200px] lg:bottom-[80px] xl:bottom-[80px] 
+              right-[40px] lg:right-[150px] xl:right-[150px]
+              md:bottom-[100px] md:right-[80px]
+              w-[120px] md:w-[150px] lg:w-[180px]"
             width={180}
             height={180}
             viewBox="0 0 180 180"

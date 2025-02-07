@@ -100,4 +100,140 @@ export const projects = [
     position: "Frontend Developer",
     techStack: [],
   },
+  {
+    title: "E-commerce Management System",
+    slug: "e-commerce-management-system",
+    client: "Vietnam 🇻🇳",
+    category: ["E-commerce"],
+    tools: ["ReactJS", "ExpressJS", "NodeJS", "Ant Design", "Sequelize"],
+    thumbnail: "/assets/images/projects/Ecom.png",
+    hero: "/assets/images/projects/Ecom.png",
+    overview: [
+      "The project aims to create a comprehensive restaurant management platform that enables owners and staff to efficiently manage business operations while providing a convenient online ordering experience for customers. The system is designed with an intuitive interface for managing menus, orders, tables, and revenue reports",
+    ],
+    //     Project Results
+    // 1. Efficient Order System
+    // Result: Successfully built a real-time order management system with clear statuses.
+    // Evidence:
+    // }
+    // 2. Optimized Ordering Process
+    // Result: Successfully implemented QR code system for each table, enabling easy customer ordering.
+    // Evidence:
+    // )
+    // 3. Complete Multi-language System
+    // Result: Full support for Vietnamese and English with smooth switching capability.
+    // Evidence:
+    // '
+    // 4. Secure and Flexible Authorization
+    // Result: Successfully implemented RBAC with three distinct roles.
+    // Evidence:
+    // only
+    // 5. Comprehensive Analytics Dashboard
+    // Result: Built dashboard with revenue, order, and sales performance tracking capabilities.
+    // Evidence:
+
+    projectChallenge: [
+      "Real-time Processing and Synchronization: Building a system capable of handling multiple simultaneous orders from different tables while ensuring data consistency and real-time status updates.Synchronizing states between multiple users (customers, staff, kitchen) and handling conflict scenarios.",
+      "QR Code System and Ordering: Creating a dynamic QR code system for each table, ensuring security and smooth ordering experience.Handling edge cases like connection loss, multiple users ordering at one table, or menu changes. ",
+      "Multi-language and Internationalization: Building a system supporting multiple languages (Vietnamese and English) with expansion capability. Ensuring all content, notifications, and UI elements are accurately and consistently translated.",
+      "Role-based Access Control: Building a dashboard system with real-time data analysis capabilities. Processing and aggregating large amounts of data to create meaningful reports.",
+      "Statistics and Reporting: Ensuring seamless integration with popular payment gateways to support safe and quick online transactions.",
+    ],
+    projectResult: [
+      "Efficient Order System: Successfully built a real-time order management system with clear statuses.",
+      "Optimized Ordering Process: Successfully implemented QR code system for each table, enabling easy customer ordering.",
+      "Complete Multi-language System: Full support for Vietnamese and English with smooth switching capability.",
+      "Secure and Flexible Authorization: Successfully implemented RBAC with three distinct roles.",
+      "Comprehensive Analytics Dashboard: Built dashboard with revenue, order, and sales performance tracking capabilities.",
+    ],
+    position: "Fullstack Developer",
+    techStack: [],
+    imgs: [
+      "/assets/images/projects/ecom-1.png",
+      "/assets/images/projects/ecom-2.png",
+      "/assets/images/projects/ecom-3.png",
+      "/assets/images/projects/ecom-4.png",
+      "/assets/images/projects/ecom-5.png",
+      "/assets/images/projects/ecom-6.png",
+      "/assets/images/projects/ecom-7.png",
+      "/assets/images/projects/ecom-8.png",
+    ],
+  },
+  {
+    title: "Social Network Platform",
+    slug: "social-network-platform",
+    client: "Vietnam 🇻🇳",
+    category: ["Social"],
+    tools: ["React Native CLI", "ExpressJS", "NodeJS", "MongoDB"],
+    thumbnail: "/assets/images/projects/social-app-thumb.png",
+    hero: "/assets/images/projects/social-app-thumb.png",
+    overview: [
+      "Our Social Network Platform is a dynamic solution designed to connect people and foster meaningful interactions online. With a comprehensive set of features including real-time chat, customizable profiles, and intuitive post management, the platform creates an engaging environment for users to share, connect, and build communities.",
+    ],
+    projectChallenge: [
+      "User Authentication Security: Implementing robust authentication systems while maintaining a smooth user experience for registration and login processes.",
+      "Real-time Performance: Ensuring stable and fast real-time chat functionality using Socket.io while handling multiple concurrent connections.",
+      "Data Management: Efficiently managing user-generated content including posts, comments, and profile information while maintaining system performance.",
+      "User Experience Optimization: Creating an intuitive interface that works seamlessly across different display modes (Dark/Light) and various user interactions.",
+      "Social Connection Features: Implementing complex friend and follow relationships while maintaining system scalability.",
+    ],
+    projectResult: [
+      "Enhanced User Engagement: Successfully implemented interactive features like post sharing, commenting, and liking that drive user participation.",
+      "Optimized Performance: Achieved improved load times and system efficiency through Code Splitting implementation.",
+      "Robust Authentication: Developed secure and user-friendly authentication system with password recovery capabilities.",
+      "Flexible User Customization: Created comprehensive profile customization options including avatar and cover photo management.",
+      "Seamless Real-time Communication: Successfully integrated Socket.io for reliable real-time chat functionality.",
+    ],
+    position: "Fullstack Developer",
+    techStack: [],
+    imgs: [
+      "/assets/images/projects/social-app-1.png",
+      "/assets/images/projects/social-app-2.png",
+      "/assets/images/projects/social-app-3.png",
+      "/assets/images/projects/social-app-4.png",
+      "/assets/images/projects/social-app-5.png",
+      "/assets/images/projects/social-app-6.png",
+      "/assets/images/projects/social-app-7.png",
+      "/assets/images/projects/social-app-8.png",
+      "/assets/images/projects/social-app-9.png",
+      "/assets/images/projects/social-app-10.png",
+    ],
+  },
+  {
+    title: "Restaurant Management System",
+    slug: "restaurant-management-system",
+    client: "Vietnam 🇻🇳",
+    category: ["Restaurant"],
+    tools: ["NextJS", "Fastify", "Prisma"],
+    thumbnail: "/assets/images/projects/restaurant-thumb.png",
+    hero: "/assets/images/projects/restaurant-thumb.png",
+    overview: [
+      "The project aims to create a comprehensive restaurant management platform that enables owners and staff to efficiently manage business operations while providing a convenient online ordering experience for customers. The system is designed with an intuitive interface for managing menus, orders, tables, and revenue reports.",
+    ],
+    projectChallenge: [
+      "User Authentication Security: Implementing robust authentication systems while maintaining a smooth user experience for registration and login processes.",
+      "Real-time Performance: Ensuring stable and fast real-time chat functionality using Socket.io while handling multiple concurrent connections.",
+      "Data Management: Efficiently managing user-generated content including posts, comments, and profile information while maintaining system performance.",
+      "User Experience Optimization: Creating an intuitive interface that works seamlessly across different display modes (Dark/Light) and various user interactions.",
+      "Social Connection Features: Implementing complex friend and follow relationships while maintaining system scalability.",
+    ],
+    projectResult: [
+      "Enhanced User Engagement: Successfully implemented interactive features like post sharing, commenting, and liking that drive user participation.",
+      "Optimized Performance: Achieved improved load times and system efficiency through Code Splitting implementation.",
+      "Robust Authentication: Developed secure and user-friendly authentication system with password recovery capabilities.",
+      "Flexible User Customization: Created comprehensive profile customization options including avatar and cover photo management.",
+      "Seamless Real-time Communication: Successfully integrated Socket.io for reliable real-time chat functionality.",
+    ],
+    position: "Fullstack Developer",
+    techStack: [],
+    imgs: [
+      "/assets/images/projects/res-1.png",
+      "/assets/images/projects/res-2.png",
+      "/assets/images/projects/res-3.png",
+      "/assets/images/projects/res-4.png",
+      "/assets/images/projects/res-5.png",
+      "/assets/images/projects/res-6.png",
+      "/assets/images/projects/res-7.png",
+    ],
+  },
 ];
